@@ -1,0 +1,14 @@
+<section class="section">
+    <div class="container">
+       <h2 class="title is-size-2 my-6 {% if page.header.title_align == 1 %} has-text-centered-desktop {% endif %}">{{ page.title }}</h2>
+
+        <div class="columns is-8 is-vcentered is-centered ">
+    		<div class="column is-10-desktop {% if page.header.text_align == 1 %} has-text-centered-desktop {% endif %}">
+    			<div class="content">
+    				{{ content|raw }}
+    			</div>
+            </div>
+
+        </div>
+    </div>
+</section>

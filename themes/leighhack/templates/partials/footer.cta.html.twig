@@ -1,0 +1,18 @@
+<section class="has-primary-gradient cta-container">
+    <div class="container">
+        <div class="columns is-vcentered has-text-centered-mobile">
+
+            <div class="column">
+                <img class="cta-img" src="{{ url('theme://images/hero-img.svg') }}" onerror="this.onerror=null; this.src= '{{ url('theme://images/hero-img@2x.png') }}'"></img>                               
+            </div>
+
+            {% block cta %}
+            <div class="column">
+                <h2 class="title has-text-white">Ready to become a member?</h2>
+                <p class="subtitle has-text-white">Leigh Hackspace is open to everyone. Being a member gives you instant access to all our facilities. Start making today!</p>
+                <a href="/membership" class="button is-primary is-medium has-box-shadow is-fullwidth">Become a Member</a>
+            </div>
+            {% endblock %}
+        </div>
+    </div>
+</section>

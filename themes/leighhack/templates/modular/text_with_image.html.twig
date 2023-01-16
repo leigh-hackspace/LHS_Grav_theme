@@ -1,0 +1,22 @@
+<section class="section _py-1">
+	<div class="container">
+
+        {# <h2 class="title is-size-2 has-text-centered my-6">{{ page.title }}</h2> #}
+        <div class="columns is-desktop is-variable is-8 is-vcentered is-centered {% if page.header.image_position == 0 %} is-flex-direction-row-reverse {% endif %}">
+
+            <div class="column is-half-desktop">
+                <div class="content">
+                    {{ content }}
+                </div>
+            </div>
+
+            <div class="column is-half-desktop">
+                <figure class="image _has-ratio">
+                    <img src="{{ page.header.image }}" alt="{{ page.header.imagealttext }}">
+                </figure>
+            </div>
+
+        </div>
+
+	</div>
+</section>

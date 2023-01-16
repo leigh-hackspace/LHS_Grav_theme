@@ -1,0 +1,80 @@
+{% extends 'default.html.twig' %}
+
+{# Page specific CCS #}
+{# ------------------------ #}
+{% block page_css %}
+    {% do assets.addCss('theme://css/dist/openlayers/ol.css') %}
+    {% do assets.addCss('theme://css/dist/openlayers/ol-ext.min.css') %}   
+{% endblock %}
+
+{# Page specific JS #}
+{# ------------------------ #}
+{% block page_js %}
+       {% do assets.addJs('theme://js/dist/openlayers/ol.js') %}
+       {% do assets.addJs('theme://js/dist/openlayers/ol-ext.min.js') %}
+{% endblock %}
+
+{# Page content #}
+{# ------------------------ #}
+{% block body %}
+
+{# Text content #}
+<section class="section">
+	<div class="container">
+        <h2 class="title has-text-centered">{{ page.title }}</h2>
+        <div class="columns is-centered">
+            <div class="column is-three-quarters-desktop">
+                <div class="content has-text-centered">
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# Contact details #}
+<section class="section pt-2">
+	<div class="container">
+        <div class="columns is-centered">
+            <div class="column is-half-desktop">
+                <address class="">
+                <h4 class="has-text-weight-bold">{{ config.hackspace.name }}</h4>
+                {{ config.hackspace.buildingname }},<br/>
+                {{ config.hackspace.streetname }},<br/>
+                {{ config.hackspace.town }},<br/>
+                {{ config.hackspace.postcode }}
+                </address>
+                <a class="is-inline-block is-spaced mt-4" href="mailto:{{ config.hackspace.email|safe_email }}">{{ config.hackspace.email }}</a>
+            </div>
+
+            <div class="column is-one-quarter-desktop">
+                <ul>
+                    <li><a target="_blank" rel="noopener" href="{{ config.hackspace.twitter }}">Twitter</a></li>
+                    <li><a target="_blank" rel="noopener" href="{{ config.hackspace.facebook }}">Facebook</a></li>
+                    <li><a target="_blank" rel="noopener" href="{{ config.hackspace.instagram }}">Instagram</a></li>
+                    <li><a target="_blank" rel="noopener" href="{{ config.hackspace.slack }}">Slack</a></li>
+                    <li><a target="_blank" rel="noopener" href="{{ config.hackspace.github }}">Github</a></li>
+                    <li><a target="_blank" rel="noopener" href="{{ config.hackspace.discourse }}">Discourse</a></li>
+                </ul>
+            </div>
+        </div>
+	</div>
+</section>
+
+<section class="map-container is-clearfix">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-fullwidth-desktop">
+                <div id="map" class="map--about m-0"></div>
+                <script src="{{ url('theme://js/leighhack-map-contact.js') }}" defer="defer"></script>
+            </div>
+        </div>
+    </div>
+</section>
+
+{# Call to action #}
+{% include 'partials/cta.small.html.twig' %}
+
+{% endblock body %}
+
+

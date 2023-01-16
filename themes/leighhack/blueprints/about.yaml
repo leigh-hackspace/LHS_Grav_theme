@@ -1,0 +1,96 @@
+extends@:
+    type: default
+    context: blueprints://pages
+
+    form:
+      fields:
+        tabs:
+          type: tabs
+          active: 1
+
+          # Replace the first tab in the admin page
+          fields:
+            content:
+              replace@: true          
+              type: tab
+              title: Content
+              fields:
+                columns:
+                  type: columns
+                  fields:
+                    column1:
+                      type: column
+                      fields:
+                        header.title:
+                          type: text
+                          autofocus: true
+                          style: vertical
+                          label: Page Title (as seen in text links)
+                    column2:
+                      type: column
+                      fields:
+                        header.page_title:
+                          type: text
+                          autofocus: true
+                          style: vertical
+                          label: Page Title (as seen on the page)
+                
+                header.page_summary:
+                  type: text
+                  style: vertical
+                  label: Summary (displayed below the main heading)
+
+                content:
+                    type: markdown
+                    label: Page content
+                    validate:
+                      type: textarea
+
+                meet:
+                  type: section
+                  title: 'Meet the team section'
+                  underline: true
+
+                columns2:
+                  type: columns
+                  fields:
+                    column1:
+                      type: column
+                      fields:
+                        header.directors_heading:
+                          type: text
+                          style: vertical
+                          label: Directors section heading
+
+                        header.directors_content:
+                          type: textarea
+                          style: vertical
+                          label: Directors section content
+
+                    column2:
+                      type: column
+                      fields:
+                        header.team_heading:
+                          type: text
+                          style: vertical
+                          label: Team section heading
+
+                        header.team_content:
+                          type: textarea
+                          style: vertical
+                          label: Teams section content
+                      
+                join:
+                  type: section
+                  title: 'Join the team section'
+                  underline: true
+
+                header.join_heading:
+                  type: text
+                  style: vertical
+                  label: Join the team heading
+
+                header.join_content:
+                  type: textarea
+                  style: vertical
+                  label: Join the team content

@@ -1,0 +1,74 @@
+title: Text with Image
+
+extends@:
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          fields:
+
+                header.title:
+                  type: text
+                  autofocus: true
+                  style: vertical
+                  label: PLUGIN_ADMIN.TITLE
+
+                content:
+                    type: markdown
+                    validate:
+                      type: textarea
+
+                header.media_order:
+                  type: pagemedia
+                  label: 'Add images for this section'
+
+                # header.media_order:
+                #     unset@: false
+
+                header.hero_image:
+                    label: 'Select Image to Display'
+                    folder: '@page@:/images'
+                    type: mediapicker
+                    style: vertical
+                    preview_images: true
+
+                header.buttons:
+                  name: buttons
+                  type: list
+                  style: vertical
+                  label: Hero Buttons
+                  fields:
+                    .anchor:
+                      type: text
+                      label: Text
+                    .url:
+                      type: pages
+                      size: medium
+                      classes: fancy
+                      # start_route: '/'
+                      show_all: false
+                      show_modular: false
+                      show_root: false
+                      label: URL
+                    .ghost:
+                      type: toggle
+                      label: 'Make button primary style?'
+                      help: 'Use this toggle to make the button appear as a primary button (not outlined)'
+                      options:
+                          0: 'False'
+                          1: 'True'
+                      highlight: 1
+                      default: 0
+                      validate:
+                          type: bool
+
+
+
+       

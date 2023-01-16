@@ -1,0 +1,13 @@
+{% extends 'default.html.twig' %}
+
+{% block body %}
+
+    {# Display the modular sections of the page #}
+    {% for module in page.collection() %}
+        {{ module.content|raw }}
+    {% endfor %}
+
+    {# Call to action #}
+    {% include 'partials/footer.cta.html.twig' %}
+
+{% endblock body %}

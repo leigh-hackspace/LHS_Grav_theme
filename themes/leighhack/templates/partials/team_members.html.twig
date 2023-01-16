@@ -1,0 +1,14 @@
+<div class="column is-4">
+	<div class="_box">
+		<figure class="image is-128x128 team-profile">
+			{% set image = p.media.images|first %}
+			{% if image %}
+				{{ image.cropResize(400,400).html('','','is-rounded') }}
+			{% endif %}
+		</figure>
+		<div class="content has-text-centered">
+			<h3 class="is-size-4">{{ p.title }}</h3>
+			{{ p.content }}
+		</div>
+	</div>
+</div>

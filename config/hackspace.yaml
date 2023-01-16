@@ -1,0 +1,78 @@
+absolute_urls: false
+home:
+  alias: /home
+pages:
+  theme: leighhack
+  markdown:
+    extra: false
+  process:
+    markdown: true
+    twig: false
+cache:
+  enabled: true
+  check:
+    method: file
+  driver: auto
+  prefix: g
+twig:
+  cache: true
+  debug: true
+  auto_reload: true
+  autoescape: false
+assets:
+  css_pipeline: false
+  css_minify: true
+  css_rewrite: true
+  js_pipeline: false
+  js_minify: true
+errors:
+  display: true
+  log: true
+debugger:
+  enabled: false
+  twig: true
+  shutdown:
+    close_connection: true
+gpm:
+  releases: stable
+  verify_peer: true
+name: 'Leigh Hackspace'
+facebook: 'https://www.facebook.com/groups/leighhackspace/'
+twitter: 'https://twitter.com/leigh_hackspace'
+instagram: 'https://www.instagram.com/leighhackspace'
+github: 'https://github.com/leigh-hackspace'
+slack: 'https://join.slack.com/t/leighhack/shared_invite/enQtNDYzMjEyMDMxNDExLTE1MWY5N2IwMzdhMzQ0ZWFiNDkyNzJmMGM1ZmFkODcwMGM5ODFmYmI4MjhmM2JiMWEyY2E3NTRjMTQzMzljZWU'
+discourse: 'https://discourse.leighhack.org'
+mastodon: 'https://mastodon.social/@leigh_hackspace'
+address: ''
+building-name: 'Leigh Spinners Mill'
+town: Leigh
+email: info@leighhack.org
+addressline-1: ''
+address-line-2: ''
+building_name: 'Leigh Spinners Mill'
+address_line_1: 'Park Lane, Leigh '
+postcode: 'WN7 2LB'
+address_line_2: ''
+buildingname: 'Leigh Spinners Mill (3rd Floor)'
+streetname: 'Park Lane'
+member_standard: '24'
+member_patron: 25+
+member_concession: '15'
+member_day: '10'
+membership_daily: '10'
+phone: null
+membership_cta: 'Become a member and get instant access to all the facilities at Leigh Hackspace.'
+membership_cta_button: 'Join Today'
+links_left:
+  -
+    anchor: 'About Us'
+    url: /about
+  -
+    anchor: 'Our Facilities'
+    url: /facilities
+  -
+    anchor: 'Contact Us'
+    url: /contact
+footer_links_heading: 'Site Links'
+social_links_heading: Socials

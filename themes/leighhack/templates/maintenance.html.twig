@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}" class="js">
+
+<!-- 
+
+/ 
+/   ________  ________  ________  _____ ______   ________  ________      
+/  |\   ____\|\   __  \|\   ____\|\   _ \  _   \|\   __  \|\   ____\     
+/  \ \  \___|\ \  \|\  \ \  \___|\ \  \\\__\ \  \ \  \|\  \ \  \___|_    
+/   \ \  \    \ \  \\\  \ \_____  \ \  \\|__| \  \ \  \\\  \ \_____  \   
+/    \ \  \____\ \  \\\  \|____|\  \ \  \    \ \  \ \  \\\  \|____|\  \  
+/     \ \_______\ \_______\____\_\  \ \__\    \ \__\ \_______\____\_\  \ 
+/      \|_______|\|_______|\_________\|__|     \|__|\|_______|\_________\
+/                         \|_________|                       \|_________|
+/ 
+             Site designed & built by Cosmos – studiocosmos.co.uk
+
+-->
+
+<head>
+{% block head deferred %}
+    <meta charset="utf-8" />
+    <title>{% if page.title %}{{ page.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+    <script src="https://kit.fontawesome.com/589b48ea08.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap" rel="stylesheet"> 
+{% endblock head %}
+
+{% block stylesheets %}
+    {% do assets.addCss('theme://css-compiled/spectre'~compress) %}
+    {% if theme_var('spectre.exp') %}{% do assets.addCss('theme://css-compiled/spectre-exp'~compress)  %}{% endif %}
+    {% if theme_var('spectre.icons') %}{%  do assets.addCss('theme://css-compiled/spectre-icons'~compress) %}{% endif %}
+    {% do assets.addCss('theme://css-compiled/theme'~compress) %}
+    {% do assets.addCss('theme://css/leighhack.css') %}
+    {% block page_specific_css %}
+    {% endblock %}
+{% endblock %}
+
+{% block javascripts %}
+    {% do assets.addJs('jquery', 101) %}
+    {% do assets.addJs('theme://vendor/js/simplebox.min.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/site.js', {group:'bottom'}) %}
+    {% block page_specific_js %}
+    {% endblock %}
+{% endblock %}
+
+{% block assets deferred %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+{% endblock %}
+</head>
+
+
+<body id="top" class="{% block body_classes %}{{ body_classes }}{% endblock %}">
+    {# <div id="preloader"></div> #}
+    {% block header deferred %}
+        <section id="header" class="">
+
+<nav class="navbar is-spaced" role="navigation" aria-label="main navigation">
+<div class="container">
+  
+  <div class="navbar-brand" style="flex-grow: 1;">
+      <a class="navbar-item" href="/">
+        <img class="site-logo" src="{{ url('theme://images/logo.svg') }}" alt="{{ site.name }}" width="152"/>
+      </a>
+  </div>
+
+  <div id="navbar" class="navbar-menu has-text-centered-touch is-size-5-touch">
+
+    {# Social Icons #}
+    <div class="navbar-end navbar--social-links">
+
+        <div class="navbar-item is-inline-block-touch">
+          <span class="icon">
+            <a target="_blank" rel="noopener" href="{{ config.hackspace.twitter }}" title="Twitter"><i class="fab fa-twitter"></i></a>
+          </span>
+        </div>
+        
+        <div class="navbar-item is-inline-block-touch">
+          <span class="icon">
+            <a target="_blank" rel="noopener" href="{{ config.hackspace.github }}" title="Github"><i class="fab fa-github-alt"></i></a>
+          </span>
+        </div>
+
+        <div class="navbar-item is-inline-block-touch">
+          <span class="icon">
+            <a target="_blank" rel="noopener" href="{{ config.hackspace.slack }}" title="Slack"><i class="fab fa-slack"></i></a>
+          </span>
+        </div>
+
+        <div class="navbar-item is-inline-block-touch">
+          <span class="icon">
+            <a target="_blank" rel="noopener" href="{{ config.hackspace.instagram }}" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </span>
+        </div>
+
+        <div class="navbar-item is-inline-block-touch">
+          <span class="icon">
+            <a target="_blank" rel="noopener" href="{{ config.hackspace.facebook }}" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+          </span>
+        </div>
+    </div>
+    {# End Social Icons #}
+   </div>
+  {# End Navigation Items #} 
+
+  </div>
+</nav>
+
+
+
+            {# {% if config.plugins.login.enabled and grav.user.username %}
+                <span class="login-status-wrapper"><i class="fa fa-user"></i> {% include 'partials/login-status.html.twig' %}</span>
+            {% endif %} #}
+
+        </section>
+    {% endblock %}
+
+{% block body %}
+    {# Individual page content is overwritten here #}
+    <section class="section">
+    <div class="container">
+        <div class="columns is-centered ">
+            <div class="column">
+
+				<div class="columns is-centered is-vcentered has-text-centered-touch">
+					<div class="column is-10-desktop">
+						<div class="content has-text-centered">
+                            {% block content %}
+
+                                {{ page.content|default('PLUGIN_MAINTENANCE.OFFLINE_MARKDOWN'|t|markdown)|raw }}
+
+                                {% if maintenance.allow_login and not grav.user.authenticated %}
+                                    {# <div id="maintenance-login" style="text-align: center;"> #}
+                                    <div class="form">
+                                        {% include 'partials/maintenance-login-form.html.twig' with {content: 'PLUGIN_MAINTENANCE.AUTHORIZED_ACCESS'|t|markdown, show_login_form: true }%}
+                                    </div>
+                                {% endif %}
+                            {% endblock %}
+						</div>
+					</div>
+				</div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}
+
+{# Add the footer #}
+<footer class="footer _footer--sticky is-black has-text-white">
+    <div class="container">
+        <div class="columns">
+
+            <div class="column is-1 is-pull-right-touch">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="44" viewBox="0 0 45 44"><path fill="#FFF" fill-rule="evenodd" d="M36.249 16.101l-8.253-8.224.993-.989L22.077 0l-10.17 10.134 6.634 6.61 2.386-2.378 1.738 1.732-6.51 6.488-1.738-1.732 2.386-2.378-6.633-6.61L0 22l6.912 6.888 1.025-1.02 8.252 8.223-1.024 1.02L22.077 44l10.17-10.134-6.634-6.611-2.387 2.378-1.737-1.731 6.51-6.488 1.738 1.731-2.387 2.379 6.634 6.61L44.154 22l-6.912-6.888z"/></svg>
+            </div>
+
+            <div class="column is-5">
+                <address class="is-size-6">
+                <h4 class="title is-6 has-text-white">Where we are</h4>
+                {{ config.hackspace.name }},<br/>
+                {{ config.hackspace.buildingname }},<br/>
+                {{ config.hackspace.streetname }},<br/>
+                {{ config.hackspace.town }},<br/>
+                {{ config.hackspace.postcode }}
+                </address>
+            </div>            
+        </div>
+        
+        {# Copyright etc #}
+        <div class="columns is-vcentered is-size-6 is-multiline has-text-grey">
+            <div class="column is-10-desktop is-offset-1-desktop">
+
+                <div class="level">
+                    <div class="level-left">
+                        {# {% for p in taxonomy.findTaxonomy({'tag':'footer-link'}) %}
+                        <a href="{{ p.url }}" class="level-item is-block-touch">{{ p.title }}</a>
+                        {% endfor %} #}
+                    </div>
+                    <div class="level-right">
+                        <p>&copy; Leigh Hackspace {{ "now"|date("Y") }} | Website by <a href="https://www.studiocosmos.co.uk" target="_blank" rel="noopener">COSMOS</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+{# Add JS files to bottom of page #}
+{% block bottom %}
+    {{ assets.js('bottom')|raw }}
+{% endblock %}
+
+</body>
+</html>

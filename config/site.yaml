@@ -1,0 +1,19 @@
+title: 'Leigh Hackspace'
+default_lang: en
+author:
+  name: 'Leigh Hackspace'
+  email: system@leighhack.org
+taxonomies:
+  - category
+  - tag
+metadata:
+  description: 'Leigh Hackspace is'
+summary:
+  enabled: true
+  format: short
+  size: 300
+  delimiter: '==='
+redirects: null
+routes: null
+blog:
+  route: /blog

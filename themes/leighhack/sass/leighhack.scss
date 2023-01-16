@@ -1,0 +1,310 @@
+@charset "utf-8";
+
+// Hackspace Branding 
+$family-sans-serif: "Roboto", sans-serif;
+$primary: #d41246;
+$accent: #fbf3ee;
+$link: $primary;
+$navbar-item-color: white;
+$navbar-item-hover-color: $primary;
+$navbar-item-hover-background-color: none;
+$navbar-background-color: black;
+$navbar-burger-color: white;
+$footer-background-color: black;
+$footer-link-color: #e2e2e2;
+$button-padding-vertical: calc(0.5em) !default;
+$body-font-size: 1.375em;
+$body-line-height: 1.636em;
+$subtitle-font-size:$body-font-size!important;
+$subtitle-line-height:$body-line-height;
+
+// Import Bulmas styles
+@import "bulma.sass";
+
+
+// -------------------------------------------------------
+// Custom SCSS overrides
+// -------------------------------------------------------
+
+// Preloader
+.js div#preloader { 
+	position: fixed; 
+  left: 0; 
+  top: 0; 
+  z-index: 999; 
+  width: 100%; 
+  height: 100%; 
+  overflow: visible; 
+  background: white no-repeat center center; 
+  background-size: 20%;
+}
+
+// Modifiers
+.has-primary-gradient {
+	background-image: linear-gradient(249deg, #d41246, #ab1246 52%, #941246 82%, #941246 82%, #861246);
+}
+
+.has-box-shadow {
+	box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.58), inset 0 1px 0 0 rgba(255, 255, 255, 0.51)
+}
+
+.m-0a {
+	margin: 0 auto;
+}
+
+.hover-item {
+	// min-height:10em;
+	transition: all 0.3s;
+	
+	&:hover{
+		box-shadow: 0 0px 30px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1);
+		// border-color: $primary;
+		// box-shadow: 0 10px 1px rgba($black, 0.2);
+		// margin-top: -0.5em;
+	}
+}
+
+.columns:last-child {
+	margin-bottom: 0 !important;
+}
+
+p {
+	line-height: $body-line-height;
+	margin-bottom:1.5em!important;
+
+	&:last-child{
+		margin-bottom:0!important;
+	}
+}
+
+// -------------------------------------------------------
+// Base 
+// -------------------------------------------------------
+a {
+	text-decoration: underline;
+	
+	.navbar-item {
+
+		&:hover {
+			color:$primary;
+			border-bottom: solid 2px $primary;
+		}
+	}
+}
+
+address {
+	font-style:normal;
+}
+
+.button {
+	height:3em;
+	text-decoration: none;
+	transition: all 0.2s;
+}
+
+// -------------------------------------------------------
+//Navigation
+// -------------------------------------------------------
+.navbar {
+
+	&-item {
+		text-decoration:none;
+	}
+
+	&--social-links {
+
+		a {
+			color:white;
+	
+			&:hover {
+				color:$primary;
+			}
+		}
+	}
+
+	&-burger {
+		
+		&:hover {
+			color:white;
+		}
+	}
+}
+
+.site-logo {
+	max-height:3rem!important;
+}
+
+// -------------------------------------------------------
+// Page Modules
+// -------------------------------------------------------
+
+.hero {
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-blend-mode: multiply;
+	background: linear-gradient(249deg, #d41246, #ab1246 52%, #941246 82%, #941246 82%, #861246), cover;
+
+	&-img {
+		margin-bottom: -4.5rem;
+	}
+
+	.subtitle {
+		font-size:1.375rem;
+	}
+
+}
+
+.work-img {
+	max-width:90%;
+}
+
+.cta {
+
+	&-container{
+		margin-top:4em;
+		padding:2em 1em;
+	}
+		
+	&-img {
+		margin-top: -10rem;
+	}
+}
+
+// -------------------------------------------------------
+// Facilities
+// -------------------------------------------------------
+
+.facility {
+
+	&-hero {
+		padding:2em 0.5em;
+	}
+
+	&-container {
+		padding:2em 1em;
+	}
+
+	&-gallery {
+		padding-top:1em;
+	}
+
+	&--icon {
+		margin: 0 auto;
+		padding: 1px;
+	}
+
+	&--resource-list {
+		@include from($tablet) {
+			border-left: solid 1px;
+			border-color: hsl(0, 0%, 86%);
+		  }
+	}
+}
+
+.small_cta {
+	background-color:$accent;
+	padding:0 1em;
+}
+
+// -------------------------------------------------------
+// Membership
+// -------------------------------------------------------
+
+.pricing {
+
+	&-tiers, &-facilities{
+		padding:2em 0;
+	}
+}
+
+// -------------------------------------------------------
+// Join the team
+// -------------------------------------------------------
+
+.team {
+	&-join{
+		background-color: $accent;
+	}
+
+	&-profile {
+		margin: 0 auto;
+		margin-bottom: 1rem;
+		max-width: 256px;
+		height: auto;
+	}
+}
+
+// -------------------------------------------------------
+// Map
+// -------------------------------------------------------
+
+#map {
+	width:100%;
+	min-height:25em;
+	margin-bottom:2em;
+}
+
+.map {
+	
+	// -webkit-filter: grayscale(100%);
+	// filter: grayscale(100%);
+
+	&--home,
+	&--about {
+		width: 100%;
+		height: 400px;
+	}
+
+	&-container {
+		padding:2em 1em;
+
+		.is-spaced {
+			margin:1.5em auto;
+		}
+	}
+}
+
+// -------------------------------------------------------
+// Terms, info pages
+// -------------------------------------------------------
+
+.policy-content {
+	padding:1.375em 0;
+}
+
+// -------------------------------------------------------
+// Footer 
+// -------------------------------------------------------
+
+footer {
+
+	a {
+		color:$footer-link-color;
+		text-decoration:underline;
+
+		&:hover {
+			color:$primary;
+		}
+	}
+}
+
+.footer {
+
+	padding-bottom:2em;
+
+	&-weblink {
+	
+		background-color:$primary;
+
+	}
+
+    &--sticky {
+    	position: absolute;
+    	width: 100%;
+    	bottom: 0;
+    	overflow: hidden;
+    }
+}
+

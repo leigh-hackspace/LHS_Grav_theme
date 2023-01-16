@@ -1,0 +1,13 @@
+enabled: true
+article: true
+restaurant: false
+event: true
+organization: true
+musicevent: false
+person: false
+facebookid: null
+twitterid: null
+twitter_default: '1'
+facebook_default: '1'
+musicalbum: false
+product: false

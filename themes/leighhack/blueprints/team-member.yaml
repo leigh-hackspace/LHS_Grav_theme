@@ -1,0 +1,22 @@
+extends@:
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      # Replace the first tab in the admin page
+      fields:
+        content:
+          replace@: true          
+          type: tab
+          title: Policy Content
+          fields:
+
+            content:
+                type: markdown
+                validate:
+                  type: textarea

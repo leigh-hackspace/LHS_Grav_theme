@@ -1,0 +1,12 @@
+{% extends 'default.html.twig' %}
+
+{% block body %}
+
+	{% for module in page.collection() %}
+	    {{ module.content|raw }}
+	{% endfor %}
+
+	{# Call to action #}
+	{% include 'partials/cta.small.html.twig' %}
+
+{% endblock %}

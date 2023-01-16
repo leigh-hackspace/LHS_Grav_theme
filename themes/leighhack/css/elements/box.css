@@ -1,0 +1,61 @@
+/*
+Error: Undefined variable: "$text".
+        on line 1 of /Users/paulmurray/Work/Leigh Hackspace/Website Build/user/themes/leighhack/sass/elements/box.sass
+
+1: $box-color: $text !default
+2: $box-background-color: $white !default
+3: $box-radius: $radius-large !default
+4: $box-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1) !default
+5: $box-padding: 1.25rem !default
+6: 
+
+Backtrace:
+/Users/paulmurray/Work/Leigh Hackspace/Website Build/user/themes/leighhack/sass/elements/box.sass:1
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/script/tree/variable.rb:49:in `_perform'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/script/tree/node.rb:58:in `perform'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:472:in `visit_variable'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `block in with_base'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `with_base'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `map'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:161:in `visit'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/tree/root_node.rb:20:in `render'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/engine.rb:284:in `render'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:494:in `update_stylesheet'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:294:in `watch'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/compass-1.0.3/lib/compass/sass_compiler.rb:46:in `watch!'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/compass-1.0.3/lib/compass/commands/watch_project.rb:41:in `perform'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/compass-1.0.3/lib/compass/commands/base.rb:18:in `execute'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/compass-1.0.3/lib/compass/commands/project_base.rb:19:in `execute'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:15:in `run!'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/compass-1.0.3/bin/compass:30:in `block in <top (required)>'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/gems/compass-1.0.3/bin/compass:44:in `<top (required)>'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/bin/compass:23:in `load'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/bin/compass:23:in `<main>'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/bin/ruby_executable_hooks:15:in `eval'
+/Users/paulmurray/.rvm/gems/ruby-2.5.0/bin/ruby_executable_hooks:15:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$text\".\A         on line 1 of /Users/paulmurray/Work/Leigh Hackspace/Website Build/user/themes/leighhack/sass/elements/box.sass\A \A 1: $box-color: $text !default\A 2: $box-background-color: $white !default\A 3: $box-radius: $radius-large !default\A 4: $box-shadow: 0 2px 3px rgba($black, 0.1), 0 0 0 1px rgba($black, 0.1) !default\A 5: $box-padding: 1.25rem !default\A 6: "; }

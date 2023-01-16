@@ -1,0 +1,44 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+<section id="hero">
+    <div class="hero has-primary-gradient facility-hero">
+        <div class="hero-body">
+            <div class="container">
+                {# <div class="columns is-centered ">
+                    <div class="column"> #}
+                        <div class="columns is-vcentered has-text-centered-mobile">
+                    
+                            <div class="column">
+                                {% block page_hero %}
+                                <h1 class="title is-size-3-mobile is-size-1 has-text-white">{{ header.policy_title }}</h1>
+                                <h2 class="subtitle has-text-white"> {{ header.policy_summary }}</h2>
+                                {% endblock page_hero %}
+                            </div>
+
+                        </div>
+                    {# </div>
+                </div> #}
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="columns is-centered ">
+            <div class="column is-four-fifths">
+
+                    <div class="content policy-content">
+                    {% block content %}
+                        {{ page.content|raw }}
+                    {% endblock %}
+                    </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+

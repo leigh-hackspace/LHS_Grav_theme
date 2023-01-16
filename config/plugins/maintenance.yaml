@@ -1,0 +1,6 @@
+enabled: false
+active: true
+allow_login: true
+login_access: site.login
+maintenance_page_route: /maintenance
+maintenance_status_code: '503'

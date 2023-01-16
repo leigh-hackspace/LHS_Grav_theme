@@ -1,0 +1,15 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+    {# Display the modularsections of the page #}
+    {% for module in page.collection() %}
+        {{ module.content|raw }}
+    {% endfor %}
+
+    {# Contact Section #}
+    {% include 'partials/home.contact.html.twig' %}
+
+    {# Call to action #}
+    {% include 'partials/footer.cta.html.twig' %}
+
+{% endblock body %}

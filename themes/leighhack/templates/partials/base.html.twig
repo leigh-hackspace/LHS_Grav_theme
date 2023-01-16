@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}" class="js">
+
+<!-- 
+
+/ 
+/   ________  ________  ________  _____ ______   ________  ________      
+/  |\   ____\|\   __  \|\   ____\|\   _ \  _   \|\   __  \|\   ____\     
+/  \ \  \___|\ \  \|\  \ \  \___|\ \  \\\__\ \  \ \  \|\  \ \  \___|_    
+/   \ \  \    \ \  \\\  \ \_____  \ \  \\|__| \  \ \  \\\  \ \_____  \   
+/    \ \  \____\ \  \\\  \|____|\  \ \  \    \ \  \ \  \\\  \|____|\  \  
+/     \ \_______\ \_______\____\_\  \ \__\    \ \__\ \_______\____\_\  \ 
+/      \|_______|\|_______|\_________\|__|     \|__|\|_______|\_________\
+/                         \|_________|                       \|_________|
+/ 
+             Site designed & built by Cosmos – studiocosmos.co.uk
+
+-->
+
+<head>
+{% block head deferred %}
+    <meta charset="utf-8" />
+    {# <title>{% if page.title %}{{ page.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title> #}
+    <title>{{ site.title|e('html') }} - {% if header.title %}{{ header.title|e('html') }}{% endif %} </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% include 'partials/metadata.html.twig' %}
+    <script src="https://kit.fontawesome.com/589b48ea08.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+    <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
+    <link rel="canonical" href="{{ page.url(true, true) }}" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap" rel="stylesheet"> 
+{% endblock head %}
+
+{% block stylesheets %}
+    {% do assets.addCss('theme://css-compiled/spectre'~compress) %}
+    {% if theme_var('spectre.exp') %}{% do assets.addCss('theme://css-compiled/spectre-exp'~compress)  %}{% endif %}
+    {% if theme_var('spectre.icons') %}{%  do assets.addCss('theme://css-compiled/spectre-icons'~compress) %}{% endif %}
+    {% do assets.addCss('theme://css-compiled/theme'~compress) %}
+    {% do assets.addCss('theme://css/leighhack.css') %}
+{% endblock %}
+
+{# Per-page CSS #}
+{% block page_css %}
+
+{% endblock %}
+
+{% block javascripts %}
+    {% do assets.addJs('jquery', 101) %}
+    {% do assets.addJs('theme://vendor/js/simplebox.min.js', {group:'bottom'}) %}
+    {% do assets.addJs('theme://js/site.js', {group:'bottom'}) %}
+{% endblock %}
+
+{% block assets deferred %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+{% endblock %}
+</head>
+
+
+<body id="top" class="{% block body_classes %}{{ body_classes }}{% endblock %}">
+    {# <div id="preloader"></div> #}
+    {% block header deferred %}
+        <section id="header" class="">
+
+            {% block header_navigation %}
+                {% include 'partials/navigation.html.twig' %}
+            {% endblock %}
+
+            {# {% if config.plugins.login.enabled and grav.user.username %}
+                <span class="login-status-wrapper"><i class="fa fa-user"></i> {% include 'partials/login-status.html.twig' %}</span>
+            {% endif %} #}
+
+        </section>
+    {% endblock %}
+
+{% block body %}
+    {# Individual page content is overwritten here #}
+
+    {% block pagehero %}
+    {% endblock pagehero %}
+
+{% endblock body %}
+
+{# Add the footer #}
+{% block footer %}
+    {% include 'partials/footer.html.twig' %}
+{% endblock %}
+
+{# Add JS files to bottom of page #}
+{% block bottom %}
+    {{ assets.js('bottom')|raw }}
+{% endblock %}
+
+{# Per-page JS #}
+{% block page_js %}
+
+{% endblock %}
+
+</body>
+</html>

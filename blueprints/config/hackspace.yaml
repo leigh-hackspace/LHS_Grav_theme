@@ -1,0 +1,229 @@
+# title: Company Details
+form:
+    title: Hackspace Details
+    validation: loose
+    fields:
+
+        content:
+            type: fieldset
+            title: 'Hackspace Details'
+            collapsed: false
+            collapsible: true
+            fields:
+                name:
+                    type: text
+                    label: 'Company Name'
+                    size: medium
+                
+                address:
+                    type: section
+                    title: 'Address'
+                    underline: true
+
+                buildingname:
+                    type: text
+                    label: 'Building name'
+                
+                streetname:
+                    type: text
+                    label: 'Street'
+                
+                town:
+                    type: text
+                    label: 'Town'
+                
+                postcode:
+                    type: text
+                    label: 'Postcode'
+
+                contact:
+                    type: section
+                    title: 'Contact Details'
+                    underline: true
+
+                email:
+                    type: text
+                    label: 'Email Address'
+                    # placeholder_key: Key
+                    placeholder_value: Email Address
+
+                phone:
+                    type: text
+                    label: 'Phone Number'
+
+        social:
+            type: fieldset
+            title: 'Social Media Links'
+            collapsed: false
+            collapsible: true
+            fields:
+
+                social_links_heading:
+                    type: text
+                    style: vertical
+                    label: 'Social media footer column heading'
+                    validate:
+                        required: true
+        
+                social-link:
+                    type: columns
+                    fields:
+                        column1:
+                            type: column
+                            fields:
+                                facebook:
+                                    type: text
+                                    style: vertical
+                                    label: 'Facebook link'
+
+                                twitter:
+                                    type: text
+                                    style: vertical
+                                    label: 'Twitter link'
+
+                                instagram:
+                                    type: text
+                                    style: vertical
+                                    label: 'Instagram link'
+                        column2:
+                            type: column
+                            fields:
+                                github:
+                                    type: text
+                                    style: vertical
+                                    label: 'Github link'
+
+                                slack:
+                                    type: text
+                                    style: vertical
+                                    label: 'Slack invite link'
+
+                                discourse:
+                                    type: text
+                                    style: vertical
+                                    label: 'Discourse link'
+
+        membership:
+            type: fieldset
+            title: 'Membership Pricing'
+            collapsed: false
+            collapsible: true
+            fields:
+            
+                member_cols:
+                    type: columns
+                    fields:
+                        column1:
+                            type: column
+                            fields:
+
+                                membership-pricing:
+                                    type: section
+                                    title: 'Membership Pricing'
+                                    underline: true
+
+                                member_standard:
+                                    style: vertical
+                                    type: text
+                                    label: Standard Pricing
+
+                                member_patron:
+                                    style: vertical
+                                    type: text
+                                    label: Patron Pricing
+
+                                member_concession:
+                                    style: vertical
+                                    type: text
+                                    label: Concession Pricing
+
+                                member_day:
+                                    style: vertical
+                                    type: text
+                                    label: Price of day membership
+
+                        column2:
+                            type: column
+                            fields:
+
+                                membership_pricing:
+                                    type: section
+                                    title: 'Membership Call to Action'
+                                    underline: true
+                                    
+                                membership_cta:
+                                    type: markdown
+                                    style: vertical
+                                    label: 'CTA text'
+
+                                membership_cta_button:
+                                    type: text
+                                    style: vertical
+                                    label: 'CTA button text'
+                
+        footer:
+            type: fieldset
+            title: 'Footer Navigation Links'
+            collapsed: false
+            collapsible: true
+            fields:
+
+                footer_links_heading:
+                    type: text
+                    style: vertical
+                    label: 'Footer links heading'
+                    validate:
+                        required: true
+
+                footer_cols:
+                    type: columns
+                    fields:
+
+                        column1:
+                            type: column
+                            fields:
+
+                                col_left:
+                                    type: fieldset
+                                    title: 'First column'
+                                    collapsed: false
+                                    collapsible: true
+                                    fields:
+
+                                        links_left:
+                                            name: buttons
+                                            type: list
+                                            style: vertical
+                                            label: 'Page links'
+                                            fields:
+                                                .anchor:
+                                                    type: text
+                                                    label: Text
+                                                .url:
+                                                    type: pages
+                                                    label: URL
+
+                        column2:
+                            type: column
+                            fields:
+
+                                col_right:
+                                    type: fieldset
+                                    title: 'Second column'
+                                    collapsed: false
+                                    collapsible: true
+                                    fields:
+
+                                        links_right:
+                                            name: buttons
+                                            type: list
+                                            style: vertical
+                                            label: 'Page links'
+                                            fields:
+                                                .anchor:
+                                                    type: text
+                                                    label: Text
+                                                .url:
+                                                    type: pages
+                                                    label: URL
+

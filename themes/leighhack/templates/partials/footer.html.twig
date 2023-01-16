@@ -1,0 +1,89 @@
+<footer class="footer _footer--sticky is-black has-text-white">
+    <div class="container">
+        <div class="columns">
+
+            <div class="column is-1 is-pull-right-touch">
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="44" viewBox="0 0 45 44"><path fill="#FFF" fill-rule="evenodd" d="M36.249 16.101l-8.253-8.224.993-.989L22.077 0l-10.17 10.134 6.634 6.61 2.386-2.378 1.738 1.732-6.51 6.488-1.738-1.732 2.386-2.378-6.633-6.61L0 22l6.912 6.888 1.025-1.02 8.252 8.223-1.024 1.02L22.077 44l10.17-10.134-6.634-6.611-2.387 2.378-1.737-1.731 6.51-6.488 1.738 1.731-2.387 2.379 6.634 6.61L44.154 22l-6.912-6.888z"/></svg>
+            </div>
+            
+            {# Hackspace details #}
+            <div class="column is-4">
+                <h4 class="title is-6 has-text-white">Where we are</h4>
+                <address class="is-size-6">
+                    {{ config.hackspace.name }},<br/>
+                    {{ config.hackspace.buildingname }},<br/>
+                    {{ config.hackspace.streetname }},
+                    {{ config.hackspace.town }}, <br/>
+                    {{ config.hackspace.postcode }}
+                </address>
+            </div>
+
+            {# Site links #}
+            <div class="column is-5-mobile is-4">
+                <h4 class="title is-size-6 has-text-white">{{ config.hackspace.footer_links_heading }}</h4>
+                <div class="columns">
+                    <div class="column">
+                        <ul class="has-text-white is-size-6 ">
+                            {% for link in config.hackspace.links_left %}
+                                <li><a href="{{ link.url }}">{{ link.anchor }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                
+                {# Hide the right column if no links set #}
+                {% if config.hackspace.links_right %} 
+                    <div class="column">
+                        <ul class="has-text-white is-size-6 ">
+                            {% for link in config.hackspace.links_right %}
+                                <li><a href="{{ link.url }}">{{ link.anchor }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                </div>
+            </div>
+
+            {# Social media links etc #}
+            <div class="column">
+                <h4 class="title is-6 has-text-white">{{ config.hackspace.social_links_heading }}</h4>
+                <div class="columns">
+                    <div class="column is-4">
+                        <ul class="has-text-white is-size-6 ">
+                            <li><a target="_blank" rel="noopener" href="{{ config.hackspace.twitter }}">Twitter</a></li>
+                            <li><a target="_blank" rel="noopener" href="{{ config.hackspace.facebook }}">Facebook</a></li>
+                            <li><a target="_blank" rel="noopener" href="{{ config.hackspace.instagram }}">Instagram</a></li>
+                        </ul>
+                    </div>
+                    <div class="column is-half">
+                        <ul class="has-text-white is-size-6 ">
+                            <li><a target="_blank" rel="noopener" href="{{ config.hackspace.slack }}">Slack</a></li>
+                            <li><a target="_blank" rel="noopener" href="{{ config.hackspace.github }}">Github</a></li>
+                            <li><a target="_blank" rel="noopener" href="{{ config.hackspace.discourse }}">Discourse</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        {# Copyright etc #}
+        <div class="columns is-vcentered is-size-6 is-multiline has-text-grey mt-4">
+            <div class="column is-10-desktop is-offset-1-desktop">
+
+                <div class="level">
+                    <div class="level-left">
+                        {% for p in taxonomy.findTaxonomy({'tag':'footer-link'}) %}
+                        <a href="{{ p.url }}" class="level-item is-block-touch">{{ p.title }}</a>
+                        {% endfor %}
+                    </div>
+                    <div class="level-right">
+                        <p>&copy; Leigh Hackspace {{ "now"|date("Y") }} | Website by <a href="https://www.studiocosmos.co.uk" target="_blank" rel="noopener">COSMOS</a></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</footer>

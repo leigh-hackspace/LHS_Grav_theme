@@ -1,0 +1,89 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block body %}
+
+{% block page_specific_css %}
+    {% do assets.addCss('theme://vendor/css/simplebox.min.css') %}
+{% endblock %}
+
+<section id="hero">
+    <div class="hero has-primary-gradient facility-hero" {% if page.header.hero_image %} style="background-image: linear-gradient(-249deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url({{ page.header.hero_image }});"{% endif %}>
+        <div class="hero-body _pt-2">
+            <div class="container">
+                <div class="columns is-centered ">
+                    <div class="column is-10-desktop">
+
+                        <div class="columns is-vcentered is-centered has-text-centered">
+                    
+                            <div class="column is-four-quarters-desktop is-size-6 has-text-white">
+                                {% block facility_hero %}
+                                <nav class="is-block mb-6"><a class="breadcrumb has-text-white" href="/">Leigh Hackspace</a> > <a class="breadcrumb has-text-white" href="./"> Our Facilities</a></nav>
+                               
+                                <h1 class="title is-size-3-mobile is-size-1 has-text-white">
+                                    {% if header.page_title %}
+                                        {{ header.page_title }}
+                                    {% else %}
+                                        {{ header.title }}
+                                    {% endif %}
+                                </h1>
+                                <h2 class="subtitle has-text-white">{{ header.facility_summary }}</h2>
+                                {% endblock facility_hero %}
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="section">
+    <div class="container is-widescreen">
+        <div class="columns is-variable is-multiline is-8 is-centered _has-text-centered">
+            
+            <div class="column _is-8-desktop mb-4">
+                {# Page text content #}
+                <div class="content">
+                    {{ content|markdown }}
+                </div>
+            </div>
+            
+            {# Facility resource list #}
+            {% if page.header.facility_list %}
+            <div class="column _is-12-tablet is-5-tablet is-4-desktop _has-background-white-bis facility--resource-list py-5">
+                <h3 class="title is-size-4 has-text-centered">
+                    {% if page.header.facility_list_heading %}
+                        {{ page.header.facility_list_heading }}
+                    {% else %}
+                    What's available:
+                    {% endif %}
+                </h3>
+                <div class="content">
+                    {{ page.header.facility_list|markdown }}
+                </div>
+            </div>
+            {% endif %}
+
+            {# Image Gallery #}
+            {% if page.media.images %}
+            <div class="columns is-multiline mt-5">
+                {% for image in page.media.images %}
+                    <div class="column _is-8-desktop is-half-tablet is-half-desktop">
+                        {{ image.cropZoom(1920,1080).html(' ', ' ', 'slb') }}
+                    </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</section>
+
+{# Call to action #}
+{% include 'partials/cta.small.html.twig' %}
+
+{% endblock body %}

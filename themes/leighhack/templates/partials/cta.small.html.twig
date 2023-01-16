@@ -1,0 +1,14 @@
+<section class="small_cta">
+    <div class="container ">
+        <div class="columns is-centered is-multiline is-vcentered is-half-desktop has-text-centered py-4">
+            <div class="column is-12-mobile _is-9-desktop _is-6-widescreen has-text-weight-bold" markdown="1">
+               {{ config.hackspace.membership_cta }}
+            </div>
+            {% if config.hackspace.membership_cta_button %}
+            <div class="column is-4-tablet _is-2-desktop is-3-widescreen">
+                <a href="/membership" class="button is-primary is-fullwidth is-medium has-box-shadow">{{ config.hackspace.membership_cta_button }}</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

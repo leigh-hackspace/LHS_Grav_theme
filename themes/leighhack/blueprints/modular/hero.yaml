@@ -1,0 +1,44 @@
+title: Text with Image
+
+extends@:
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      fields:
+        content:
+          fields:
+
+                header.title:
+                  type: text
+                  autofocus: true
+                  style: vertical
+                  label: PLUGIN_ADMIN.TITLE
+
+                content:
+                    type: markdown
+                    validate:
+                      type: textarea
+
+                header.media_order:
+                  type: pagemedia
+                  label: 'Add images for this section'
+
+                # header.media_order:
+                #     unset@: false
+
+                header.hero_image:
+                    label: 'Select Image to Display'
+                    folder: '@page@:/images'
+                    type: mediapicker
+                    style: vertical
+                    preview_images: true
+
+
+
+       

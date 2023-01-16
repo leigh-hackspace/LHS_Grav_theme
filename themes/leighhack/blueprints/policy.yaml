@@ -1,0 +1,39 @@
+extends@:
+    type: default
+    context: blueprints://pages
+
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      # Replace the first tab in the admin page
+      fields:
+        content:
+          replace@: true          
+          type: tab
+          title: Policy Content
+          fields:
+
+            header.title:
+              type: text
+              autofocus: true
+              style: vertical
+              label: Facility Title (as seen in text links)
+
+            header.policy_title:
+              type: text
+              autofocus: true
+              style: vertical
+              label: Facility Title (as seen on the page)
+            
+            header.policy_summary:
+              type: text
+              style: vertical
+              label: Summary (displayed below the main heading)
+
+            content:
+                type: markdown
+                validate:
+                  type: textarea

@@ -1,0 +1,27 @@
+name: Leigh Hackspace
+version: 1.0
+description: "Default theme for the site"
+icon: empire
+author:
+  name: Studio Cosmos
+  email: admin@studiocosmos.co.uk
+  url: https://leighhackspace.co.uk
+homepage: https://github.com/getgrav/grav-theme-antimatter
+# demo: https://demo.getgrav.org/blog-skeleton
+keywords: leigh hackspace, theme, core, modern, fast, responsive, html5, css3
+# bugs: https://github.com/getgrav/grav-theme-antimatter/issues
+# license: MIT
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in navbar
+        highlight: 1
+        default: 1
+        options:
+          1: Enabled
+          0: Disabled
+        validate:
+          type: bool

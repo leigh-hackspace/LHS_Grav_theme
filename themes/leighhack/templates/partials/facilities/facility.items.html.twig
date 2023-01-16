@@ -1,0 +1,12 @@
+{% for p in taxonomy.findTaxonomy({'category':'facilities'}) if p != page %}
+<div class="column is-flex is-half-tablet is-one-quarter-widescreen is-flex-grow-1">
+    <div class="box hover-item is-flex is-flex-grow-2 is-flex-direction-column is-align-items-center is-justify-content-space-between">
+        <svg class="mb-3 _facility--icon" width="32" height="32">
+            <image xlink:href="{{ p.header.facility_icon }}.svg" src="{{ p.header.facility_icon }}.png" width="32" height="32" />
+        </svg>
+        <h3 class="title is-size-4">{{ p.header.title }}</h3>
+        <p>{{ p.header.facility_summary }}</p>
+        <a href="{{ p.url }}" class="_button _is-align-self-flex-end is-primary is-medium is-fullwidth is-outlined">Learn more</a>
+    </div>
+</div>
+{% endfor %}

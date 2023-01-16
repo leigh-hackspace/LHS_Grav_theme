@@ -1,0 +1,24 @@
+{% extends 'modular.html.twig' %}
+
+{% block body %}
+
+    {# Display the modular sections of the page #}
+    {% for module in page.collection() %}
+        {{ module.content|raw }}
+    {% endfor %}
+
+
+    {# <section class="facility-container">
+        <div class="container facility-container pt-0">
+            <div class="columns is-multiline has-text-centered">
+
+    		{% include 'partials/facilities/facility.items.html.twig' %}
+                        
+            </div>
+        </div>
+    </section> #}
+
+{# Call to action #}
+{% include 'partials/footer.cta.html.twig' %}
+
+{% endblock body %}

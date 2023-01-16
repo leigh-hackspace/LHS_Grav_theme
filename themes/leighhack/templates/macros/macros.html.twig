@@ -1,0 +1,32 @@
+{% macro nav_loop(page) %}
+  {% import _self as macros %}
+  {% for p in page.children.visible %}
+    {% set active_page = (p.active or p.activeChild) ? 'active' : '' %}
+    {% if p.children.visible.count > 0 %}
+      <li>
+        <a href="{{ p.url }}" class="{{ active_page }} navbar-item has-shadow is-size-5">{{ p.menu }}</a>
+        <ul>{{ macros.nav_loop(p) }}</ul>
+      </li>
+    {% else %}
+        <a href="{{ p.url }}" class="{{ active_page }} navbar-item has-shadow is-size-5">{{ p.menu }}</a>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+
+{% macro nav_loop_footer(page) %}
+  {% import _self as macros %}
+  {% for p in taxonomy.findTaxonomy({'category':'footer-nav'}) %}
+    {% set active_page = (p.active or p.activeChild) ? 'active' : '' %}
+    {% if p.children.visible.count > 0 %}
+      <li>
+        <a href="{{ p.url }}" class="{{ active_page }} is-size-5">{{ p.menu }}</a>
+        <ul>{{ macros.nav_loop_footer(p) }}</ul>
+      </li>
+    {% else %}
+      <li>
+        <a href="{{ p.url }}" class="{{ active_page }} is-size-5">{{ p.menu }}</a>
+        <ul>{{ macros.nav_loop_footer(p) }}</ul>
+      </li>
+    {% endif %}
+  {% endfor %}
+{% endmacro %}

@@ -1,0 +1,18 @@
+
+<section id="hero">
+    <div class="hero is-medium" {% if page.header.hero_image %} style="background-image: linear-gradient(-249deg, black, white), url({{ page.header.hero_image }});"{% endif %}>
+        <div class="hero-body">
+            <div class="container">
+    
+                <div class="columns _is-centered is-vcentered has-text-white has-text-centered-mobile">
+        
+                    <div class="column is-full-tablet _is-offset-one-quarter-tablet is-half-desktop">
+                        <h1 class="title is-1 has-text-white">{{ page.title }}</h1>
+                        <p class="subtitle">{{ content|raw }}</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

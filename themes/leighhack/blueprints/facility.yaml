@@ -1,0 +1,114 @@
+title: Facility
+visible: false
+
+extends@:
+    type: default
+    context: blueprints://pages
+form:
+  fields:
+    tabs:
+      type: tabs
+      active: 1
+
+      # Replace the first tab in the admin page
+      fields:
+        content:
+          replace@: true          
+          type: tab
+          title: Facility Details
+          fields:
+
+            facility_content:
+              type: fieldset
+              title: 'Facility Details'
+              collapsed: false
+              collapsible: true
+              fields:
+
+                header.title:
+                  type: text
+                  autofocus: true
+                  style: vertical
+                  label: Main Facility Title
+                
+                header.page_title:
+                  type: text
+                  autofocus: true
+                  style: vertical
+                  label: Override the default title for this page
+                  help: Use this to override the title on this page only e.g. for SEO purposes
+
+                header.facility_summary:
+                  type: text
+                  style: vertical
+                  label: Summary (used for page snippets)
+
+                header.facility_icon:
+                  type: selectize
+                  style: vertical
+                  label: Select icon
+                  selectize:
+                      options:
+                          - text: "3D Printing"
+                            value: "/user/themes/leighhack/images/icons/3dprinting"
+                          - text: "Ceramics"
+                            value: "/user/themes/leighhack/images/icons/ceramics"
+                          - text: "Darkroom"
+                            value: "/user/themes/leighhack/images/icons/darkroom"
+                          - text: "Electronics"
+                            value: "/user/themes/leighhack/images/icons/electronics"
+                          - text: "Hot Desking"
+                            value: "/user/themes/leighhack/images/icons/hotdesking"
+                          - text: "Robotics"
+                            value: "/user/themes/leighhack/images/icons/robotics"
+                          - text: "Screenprinting"
+                            value: "/user/themes/leighhack/images/icons/screenprinting"
+                          - text: "Textiles"
+                            value: "/user/themes/leighhack/images/icons/textiles"
+                          - text: "Workshop"
+                            value: "/user/themes/leighhack/images/icons/workshop"
+                
+                details:
+                  type: columns
+                  fields:
+                    column1:
+                      type: column
+                      fields:
+                        content:
+                          type: markdown
+                          style: vertical
+                          validate:
+                            type: textarea
+                          label: Main content for the page
+
+                   
+                    column2:
+                      type: column
+                      fields:
+                        header.facility_list:
+                          type: markdown
+                          style: vertical
+                          label: List of facility resources and selling points
+
+                # header.media_order:
+                #   type: pagemedia
+                #   label: 'Add images for this section'
+
+                header.hero_image:
+                    label: 'Select image to display as hero background'
+                    folder: '@page@:/images'
+                    type: mediapicker
+                    style: vertical
+                    preview_images: true
+
+                header.facility_images:
+                  type: PageMedia
+                  label: Add images
+
+
+            
+
+
+
+
+
