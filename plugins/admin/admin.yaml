@@ -27,7 +27,7 @@ edit_mode: normal
 frontend_preview_target: inline
 show_github_msg: true
 admin_icons: line-awesome
-enable_auto_updates_check: true
+enable_auto_updates_check: false
 notifications:
   feed: true
   dashboard: true

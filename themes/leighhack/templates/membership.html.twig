@@ -42,42 +42,25 @@
 				<div class="columns has-text-centered">
 
 					{# Start Pricing Tiers #}
-					{# TO DO – rewrite template to loop through price tiers specified in the config #}
-					<div class="column">
-						<div class="box hover-item">
-							<h3 class="is-size-4 has-text-weight-bold">Standard Membership</h3>
-							<div class="is-size-1 has-text-weight-bold my-5">£{{ config.hackspace.member_standard }} </div>
-							<div class="_is-block mt-1 is-size-6 has-text-weight-normal">per month</div>
-							<div class="content mt-5">
-								<p>Our standard membership that gives you instant access to all facilities.</p>
-								<a href="#" class="button is-primary is-medium is-fullwidth has-box-shadow" disabled>Membership closed</a>
-							</div>
-						</div>
-					</div>
 
+                    {% for membership in config.hackspace.memberships %}
 					<div class="column">
 						<div class="box hover-item">
-							<h3 class="is-size-4 has-text-weight-bold">Patron Membership</h3>
-							<div class="is-size-1 has-text-weight-bold my-5">£{{ config.hackspace.member_patron }}</div>
+							<h3 class="is-size-4 has-text-weight-bold">{{ membership.name }}</h3>
+							<div class="is-size-1 has-text-weight-bold my-5">£{{ membership.price }} </div>
 							<div class="_is-block mt-1 is-size-6 has-text-weight-normal">per month</div>
 							<div class="content mt-5">
-								<p>A voluntary higher fee that allows us to grow faster and buy better equipment.</p>
-								<a href="#" class="button is-primary is-medium is-fullwidth has-box-shadow" disabled>Membership closed</a>
+								<p>{{ membership.desc }}</p>
+                                {% if membership.enabled %}
+                                   <a href="{{membership.link}}" class="button is-primary is-medium is-fullwidth has-box-shadow">Join Today</a>
+                                {% else %}
+                                    <a href="#" class="button is-primary is-medium is-fullwidth has-box-shadow" disabled>Membership Paused</a>
+                                {% endif %}
 							</div>
 						</div>
 					</div>
+                    {% endfor %}
 
-					<div class="column">
-						<div class="box hover-item">
-							<h3 class="is-size-4 has-text-weight-bold">Concession</h3>
-							<div class="is-size-1 has-text-weight-bold my-5">£{{ config.hackspace.member_concession }}</div>
-							<div class="_is-block mt-1 is-size-6 has-text-weight-normal">per month</div>
-							<div class="content mt-5">
-								<p>Reduced rate for low-income members, pensioners and students</p>
-								<a href="#" class="button is-primary is-medium is-fullwidth has-box-shadow" disabled>Membership closed</a>
-							</div>
-						</div>
-					</div>
 					{# End Pricing Tiers #}
 
 				</div>

@@ -56,9 +56,25 @@ postcode: 'WN7 2LB'
 address_line_2: ''
 buildingname: 'Leigh Spinners Mill (3rd Floor)'
 streetname: 'Park Lane'
-member_standard: '24'
-member_patron: 25+
-member_concession: '15'
+memberships:
+  standard:
+    name: 'Standard Membership'
+    enabled: '1'
+    price: '24'
+    link: 'https://pay.gocardless.com/AL00024VQTCKBK'
+    desc: 'Our standard membership that gives you instant access to all facilities.'
+  patron:
+    name: 'Patron Membership'
+    enabled: '1'
+    price: 25+
+    link: 'https://pay.gocardless.com/AL00024VQW2FWQ'
+    desc: 'A voluntary higher fee that allows us to grow faster and buy better equipment.'
+  concession:
+    enabled: '1'
+    name: Concession
+    price: '18'
+    link: 'https://pay.gocardless.com/AL0002BMN4S3AX'
+    desc: 'Reduced rate for low-income members, pensioners and students'
 member_day: '10'
 membership_daily: '10'
 phone: null
