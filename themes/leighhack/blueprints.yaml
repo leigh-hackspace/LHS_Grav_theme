@@ -6,6 +6,7 @@ author:
   name: Studio Cosmos
   email: admin@studiocosmos.co.uk
   url: https://leighhackspace.co.uk
+yubikey_id: '461230'
 homepage: https://github.com/getgrav/grav-theme-antimatter
 # demo: https://demo.getgrav.org/blog-skeleton
 keywords: leigh hackspace, theme, core, modern, fast, responsive, html5, css3

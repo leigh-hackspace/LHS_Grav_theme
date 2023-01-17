@@ -85,6 +85,11 @@ form:
                                     type: text
                                     style: vertical
                                     label: 'Instagram link'
+
+                                mastodon:
+                                    type: text
+                                    style: vertical
+                                    label: 'Mastodon link'
                         column2:
                             type: column
                             fields:
@@ -105,7 +110,7 @@ form:
 
         membership:
             type: fieldset
-            title: 'Membership Pricing'
+            title: 'Membership'
             collapsed: false
             collapsible: true
             fields:
@@ -121,28 +126,81 @@ form:
                                     type: section
                                     title: 'Membership Pricing'
                                     underline: true
-
-                                member_standard:
+                                  
+                                standard:
+                                  type: section
+                                  underline: true
+                              
+                                memberships.standard.price:
                                     style: vertical
                                     type: text
                                     label: Standard Pricing
+                               
+                                memberships.standard.link:
+                                    style: vertical
+                                    type: text
+                                    label: Standard link
 
-                                member_patron:
+                                memberships.standard.enabled: 
+                                    style: vertical
+                                    type: checkbox
+                                    label: Enabled
+
+                                patron:
+                                  type: section
+                                  underline: true
+                                      
+                                memberships.patron.price:
                                     style: vertical
                                     type: text
                                     label: Patron Pricing
+                               
+                                memberships.patron.link:
+                                    style: vertical
+                                    type: text
+                                    label: Patron link
 
-                                member_concession:
+                                memberships.patron.enabled: 
+                                    style: vertical
+                                    type: checkbox
+                                    label: Enabled
+
+                                concession:
+                                  type: section
+                                  underline: true
+
+                                memberships.concession.price:
                                     style: vertical
                                     type: text
                                     label: Concession Pricing
+                               
+                                memberships.concession.link:
+                                    style: vertical
+                                    type: text
+                                    label: Concession link
+
+                                memberships.concession.enabled: 
+                                    style: vertical
+                                    type: checkbox
+                                    label: Enabled
+
+
+                                daymembership:
+                                  type: section
+                                  underline: true
 
                                 member_day:
                                     style: vertical
                                     type: text
                                     label: Price of day membership
-
                         column2:
+                            type: column
+                            fields:
+                              type: section
+                              membership_pricing_links:
+                                type:
+                        
+                                
                             type: column
                             fields:
 
