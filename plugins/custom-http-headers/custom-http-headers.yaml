@@ -1,0 +1,5 @@
+enabled: true
+enabled_in_admin: true
+debug_headers: false
+custom_headers:
+  X-Clacks-Overhead: "GNU Terry Pratchett"
