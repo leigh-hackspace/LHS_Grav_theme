@@ -59,7 +59,7 @@ streetname: 'Park Lane'
 memberships:
   standard:
     name: 'Standard Membership'
-    enabled: null
+    enabled: '1'
     price: '24'
     link: 'https://pay.gocardless.com/AL00024VQTCKBK'
     desc: 'Our standard membership that gives you instant access to all facilities.'

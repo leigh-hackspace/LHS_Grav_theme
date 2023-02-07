@@ -7,3 +7,12 @@ cache-clear:
 cache-purge:
   state: success
   last-run: 1675656000
+default-site-backup:
+  state: success
+  last-run: 1673924404
+cache-clear:
+  state: success
+  last-run: 1673924404
+cache-purge:
+  state: success
+  last-run: 1673928000
