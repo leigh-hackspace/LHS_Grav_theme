@@ -110,7 +110,7 @@ form:
 
         membership:
             type: fieldset
-            title: 'Membership'
+            title: 'Membership Pricing'
             collapsed: false
             collapsible: true
             fields:
@@ -124,22 +124,23 @@ form:
 
                                 membership-pricing:
                                     type: section
-                                    title: 'Membership Pricing'
                                     underline: true
                                   
                                 standard:
                                   type: section
-                                  underline: true
+                                  title: "Standard"
+                                  bold: true
+
                               
                                 memberships.standard.price:
                                     style: vertical
                                     type: text
-                                    label: Standard Pricing
+                                    label: Price
                                
                                 memberships.standard.link:
                                     style: vertical
                                     type: text
-                                    label: Standard link
+                                    label: Link
 
                                 memberships.standard.enabled: 
                                     style: vertical
@@ -148,17 +149,18 @@ form:
 
                                 patron:
                                   type: section
-                                  underline: true
+                                  title: "Patron"
+                                  bold: true
                                       
                                 memberships.patron.price:
                                     style: vertical
                                     type: text
-                                    label: Patron Pricing
+                                    label: Price
                                
                                 memberships.patron.link:
                                     style: vertical
                                     type: text
-                                    label: Patron link
+                                    label: Link
 
                                 memberships.patron.enabled: 
                                     style: vertical
@@ -167,59 +169,187 @@ form:
 
                                 concession:
                                   type: section
-                                  underline: true
+                                  title: "Concession"
+                                  bold: true
 
                                 memberships.concession.price:
                                     style: vertical
                                     type: text
-                                    label: Concession Pricing
+                                    label: Price
                                
                                 memberships.concession.link:
                                     style: vertical
                                     type: text
-                                    label: Concession link
+                                    label: Link
 
                                 memberships.concession.enabled: 
                                     style: vertical
                                     type: checkbox
                                     label: Enabled
 
-
                                 daymembership:
                                   type: section
-                                  underline: true
+                                  title: "Day Pass"
+                                  bold: true
 
-                                member_day:
+                                memberships.daypass.price:
                                     style: vertical
                                     type: text
-                                    label: Price of day membership
-                        column2:
-                            type: column
-                            fields:
-                              type: section
-                              membership_pricing_links:
-                                type:
-                        
+                                    label: Price
                                 
-                            type: column
-                            fields:
-
-                                membership_pricing:
-                                    type: section
-                                    title: 'Membership Call to Action'
-                                    underline: true
-                                    
-                                membership_cta:
-                                    type: markdown
+                                memberships.daypass.link:
                                     style: vertical
-                                    label: 'CTA text'
-
-                                membership_cta_button:
                                     type: text
+                                    label: Link
+                                
+                                memberships.daypass.enabled:
                                     style: vertical
-                                    label: 'CTA button text'
+                                    type: checkbox
+                                    label: Enabled
+                        
                 
-        footer:
+        opening_times:
+            type: fieldset
+            title: 'Opening Times'
+            collapsed: false
+            collapsible: true
+            fields:     
+                monday:
+                    type: section
+                    title: "Monday"
+                    fields:                    
+                        opening_times.monday.open_time:
+                            style: vertical
+                            type: text
+                            label: Open Time (24HR)
+                            
+                        opening_times.monday.close_time:
+                            style: vertical
+                            type: text
+                            label: Close Time (24HR)
+                            
+                        opening_times.monday.open:
+                            style: vertical
+                            type: checkbox
+                            label: Open
+
+                tuesday:
+                    type: section
+                    title: "Tuesday"
+                    fields:                    
+                        opening_times.tuesday.open_time:
+                            style: vertical
+                            type: text
+                            label: Open Time (24HR)
+                            
+                        opening_times.tuesday.close_time:
+                            style: vertical
+                            type: text
+                            label: Close Time (24HR)
+                            
+                        opening_times.tuesday.open:
+                            style: vertical
+                            type: checkbox
+                            label: Open
+
+                wednesday:
+                    type: section
+                    title: "Wednesday"
+                    fields:                    
+                        opening_times.wednesday.open_time:
+                            style: vertical
+                            type: text
+                            label: Open Time (24HR)
+                            
+                        opening_times.wednesday.close_time:
+                            style: vertical
+                            type: text
+                            label: Close Time (24HR)
+                            
+                        opening_times.wednesday.open:
+                            style: vertical
+                            type: checkbox
+                            label: Open
+
+                thursday:
+                    type: section
+                    title: "Thursday"
+                    fields:                    
+                        opening_times.thursday.open_time:
+                            style: vertical
+                            type: text
+                            label: Open Time (24HR)
+                            
+                        opening_times.thursday.close_time:
+                            style: vertical
+                            type: text
+                            label: Close Time (24HR)
+                            
+                        opening_times.thursday.open:
+                            style: vertical
+                            type: checkbox
+                            label: Open
+
+                friday:
+                    type: section
+                    title: "Friday"
+                    fields:                    
+                        opening_times.friday.open_time:
+                            style: vertical
+                            type: text
+                            label: Open Time (24HR)
+                            
+                        opening_times.friday.close_time:
+                            style: vertical
+                            type: text
+                            label: Close Time (24HR)
+                            
+                        opening_times.friday.open:
+                            style: vertical
+                            type: checkbox
+                            label: Open
+
+                saturday:
+                    type: section
+                    title: "Saturday"
+                    fields:                    
+                        opening_times.saturday.open_time:
+                            style: vertical
+                            type: text
+                            label: Open Time (24HR)
+                            
+                        opening_times.saturday.close_time:
+                            style: vertical
+                            type: text
+                            label: Close Time (24HR)
+                            
+                        opening_times.saturday.open:
+                            style: vertical
+                            type: checkbox
+                            label: Open
+
+                sunday:
+                    type: section
+                    title: "Sunday"
+                    fields:                    
+                        opening_times.sunday.open_time:
+                            style: vertical
+                            type: text
+                            label: Open Time (24HR)
+                            
+                        opening_times.sunday.close_time:
+                            style: vertical
+                            type: text
+                            label: Close Time (24HR)
+                            
+                        opening_times.sunday.open:
+                            style: vertical
+                            type: checkbox
+                            label: Open
+
+
+            
+        footer: 
             type: fieldset
             title: 'Footer Navigation Links'
             collapsed: false

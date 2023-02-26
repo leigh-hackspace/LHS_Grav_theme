@@ -1,0 +1,29 @@
+{% block body %}
+<section class="container">
+  <div class="container">
+  <h1>Opening Times</h1>
+    <div class="columns">
+      <div class="column is-one-third-desktop">
+      
+        <table>
+          <tr>
+            <th style="padding-left: 15px;">Day</th>
+            <th style="padding-left: 15px;">Opening Times</th>
+          </tr>
+        {% for day in config.hackspace.opening_times %}
+          <tr>
+            <td style="padding-left: 15px;">{{day.name}}</td>
+            {% if day.open %}
+              <td style="padding-left: 15px; text-align: center;">{{ day.open_time }} - {{day.close_time}}</td>
+            {% else %}
+              <td style="padding-left: 15px; text-align: center;">Closed</td>
+            {% endif %}
+          </tr>
+        {% endfor %}
+        </table>
+        <p>Please note, we are currently operating reduced opening times.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock body %}
