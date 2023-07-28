@@ -1,3 +1,25 @@
+# v7.2.1
+## 06/27/2023
+
+1. [](#improved)
+   * Added some optional debug output to help isolate form loading problems
+1. [](#bugfix)
+   * More robust fix for multi-language form caching
+
+# v7.2.0
+## 06/21/2023
+
+1. [](#bugfix)
+   * Fixed a long-standing bug with cached forms not working properly in multi-language scenarios
+
+# v7.1.3
+## 05/09/2023
+
+1. [](#improved)
+   * Removed `FILTER_SANITIZE_STRING` input filter in favor of `htmlspecialchars(strip_tags())` 
+   * Fixed a deprecated message when using `Route::_toString()`
+   * Require Grav `v1.7.41` as it contains `GRAV_SANITIZE_STRING` constant
+
 # v7.1.2
 ## 01/08/2023
 

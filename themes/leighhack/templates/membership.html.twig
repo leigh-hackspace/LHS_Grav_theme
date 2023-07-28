@@ -1,6 +1,10 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block body %}
+<style>
+
+
+</style>
 
 <section id="hero">
 	<div class="hero has-primary-gradient">
@@ -36,44 +40,21 @@
               <p>Leigh Hackspace is a proudly non-profit organisation. We rely on contributions from our members to pay bills, buy equipment we can all use, and provide essential services like high-speed internet.</p> 
             </div>
 		</div>
+		<div class="columns pricing-tiers is-centered">
+      <div class="column is-8-desktop">
+      
+        {% include 'partials/pricing/membership.html.twig' %}
+        <hr>
+        {% include 'partials/pricing/other_membership.html.twig' %}
+      </div>
+     </div>
 
-        <div class="columns pricing-tiers is-centered">
-			<div class="column is-10-desktop">
-				<div class="columns has-text-centered">
-
-					{# Start Pricing Tiers #}
-
-                    {% for membership in config.hackspace.memberships %}
-					<div class="column">
-						<div class="box hover-item">
-							<h3 class="is-size-4 has-text-weight-bold">{{ membership.name }}</h3>
-							<div class="is-size-1 has-text-weight-bold my-5">£{{ membership.price }} </div>
-							<div class="_is-block mt-1 is-size-6 has-text-weight-normal">per month</div>
-							<div class="content mt-5">
-								<p>{{ membership.desc }}</p>
-                                {% if membership.enabled %}
-                                   <a href="{{membership.link}}" class="button is-primary is-medium is-fullwidth has-box-shadow">Join Today</a>
-                                {% else %}
-                                    <a href="#" class="button is-primary is-medium is-fullwidth has-box-shadow" disabled>Membership Paused</a>
-                                {% endif %}
-							</div>
-						</div>
-					</div>
-                    {% endfor %}
-
-					{# End Pricing Tiers #}
-
-				</div>
-
-			</div>
-		</div>
-
-        <div class="columns is-centered is-vcentered has-text-centered">
-            <div class="column is-8-desktop">
-              <p>The biggest asset you will find as a member is being part of a social making and learning community. Our memberbase consists of people with skills ranging from programming computers to making guitars, from self-publishing to hand stitching, and from fine art to poetry.</p> 
-            </div>
-		</div>
-
+      <div class="columns is-centered is-vcentered has-text-centered">
+          <div class="column is-8-desktop">
+            <p>The biggest asset you will find as a member is being part of a social making and learning community. Our memberbase consists of people with skills ranging from programming computers to making guitars, from self-publishing to hand stitching, and from fine art to poetry.</p> 
+          </div>
+      </div>
+     
 	</div>
 </section>
 

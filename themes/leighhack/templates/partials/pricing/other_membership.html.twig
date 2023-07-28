@@ -1,0 +1,32 @@
+<style>
+
+  .box-height {
+    min-height: 300px;
+  }
+
+
+</style>
+<div class="columns has-text-centered">
+    {# Start Pricing Tiers #}
+    {% for membership in config.hackspace.special_memberships %}
+     
+        <div class="column">
+          <div class="box hover-items box-height">
+            <h3 class="is-size-4 has-text-weight-bold">{{ membership.name }}</h3>
+            <div class="is-size-1 has-text-weight-bold my-5">£{{ membership.price }} </div>
+            <div class="_is-block mt-1 is-size-6 has-text-weight-normal">per month</div>
+            <div class="content mt-5">
+              <p class="line_one">{{ membership.desc }}</p>
+              <p class="line_two">{{ membership.desc2 }}</p>
+              {% if membership.enabled %}
+                <a href="{{membership.link}}" class="button is-primary is-medium is-fullwidth has-box-shadow">Join Today</a>
+              {% else %}
+                <a href="#" class="button is-primary is-medium is-fullwidth has-box-shadow" disabled>Membership Paused</a>
+              {% endif %}
+              </div>
+          </div>
+        </div>
+
+    {% endfor %}
+    {# End Pricing Tiers #}
+</div>
