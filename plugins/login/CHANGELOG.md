@@ -1,3 +1,24 @@
+# v3.7.6
+## 06/29/2023
+
+1. [](#bugfix)
+   * Don't save an empty user file on password reset of non-existing user
+
+# v3.7.5
+## 06/14/2023
+
+1. [](#bugfix)
+   * Sanitized `email` during the "forgot password" process to protect against XSS attacks
+   * Fixed an account enumeration vulnerability in forgot password [#293](https://github.com/getgrav/grav-plugin-login/pull/293)
+
+# v3.7.4
+## 05/09/2023
+
+1. [](#improved)
+   * Removed `FILTER_SANITIZE_STRING` input filter in favor of `htmlspecialchars(strip_tags())` 
+   * Require Grav `v1.7.41` for new  `UserGroupObject::groupNames` to address deprecation message
+   * Updated to BaconQRCode `v2.0.8`
+
 # v3.7.3
 ## 02/17/2023
 

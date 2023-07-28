@@ -186,23 +186,63 @@ form:
                                     style: vertical
                                     type: checkbox
                                     label: Enabled
+                                
+                                family:
+                                    type: section
+                                    title: "Family Membership"
+                                    bold: true
+
+                                special_memberships.family.price:
+                                    style: vertical
+                                    type: text
+                                    label: Price
+
+                                special_memberships.family.link:
+                                    style: vertical
+                                    type: text
+                                    label: Link
+
+                                special_memberships.family.enabled:
+                                    style: vertical
+                                    type: checkbox
+                                    label: Enabled
 
                                 daymembership:
                                   type: section
                                   title: "Day Pass"
                                   bold: true
 
-                                memberships.daypass.price:
+                                special_memberships.daypass.price:
                                     style: vertical
                                     type: text
                                     label: Price
                                 
-                                memberships.daypass.link:
+                                special_memberships.daypass.link:
                                     style: vertical
                                     type: text
                                     label: Link
                                 
-                                memberships.daypass.enabled:
+                                special_memberships.daypass.enabled:
+                                    style: vertical
+                                    type: checkbox
+                                    label: Enabled
+                                
+                                corpmembership:
+                                  type: section
+                                  title: "Corporate"
+                                  bold: true
+
+                                special_memberships.corp.price:
+                                    style: vertical
+                                    type: text
+                                    label: Price
+                                
+                                special_memberships.corp.link:
+                                    style: vertical
+                                    type: text
+                                    label: Link
+                                
+                                special_memberships.corp.enabled:
                                     style: vertical
                                     type: checkbox
                                     label: Enabled
