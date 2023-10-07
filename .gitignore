@@ -1,3 +1,5 @@
 .DS_Store
 accounts/
 data/
+LHS_grav_theme/user/accounts/*
+LHS_grav_theme/user/data/*
