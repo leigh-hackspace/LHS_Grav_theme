@@ -58,14 +58,14 @@ buildingname: 'Leigh Spinners Mill (3rd Floor)'
 streetname: 'Park Lane'
 memberships:
   standard:
-    name: Standard
     enabled: '1'
+    name: Standard
     price: '24'
     link: 'https://pay.gocardless.com/AL00024VQTCKBK'
     desc: 'Our standard membership that gives you instant access to all facilities.'
   patron:
-    name: Patron
     enabled: '1'
+    name: Patron
     price: '30'
     link: 'https://pay.gocardless.com/AL00024VQW2FWQ'
     desc: 'A voluntary higher fee that allows us to grow faster and buy better equipment.'
@@ -81,22 +81,22 @@ special_memberships:
     name: Family
     price: '40'
     link: 'https://pay.gocardless.com/AL000637J3VZP7'
-    desc: 'Family membership for 2 adults and children'
-    desc2: ''
-  daypass:
-    name: 'Day Pass'
-    price: '10'
-    link: 'mailto:memberships@leighhack.org?subject=Day%20Pass'
-    desc: 'For more info please speak to a Director.'
-    desc2: ''
-    enabled: '1'
+    desc: 'Family membership'
+    desc2: '(2 adults and children)'
   corp:
-    name: Corporate
+    enabled: '1'
+    name: 'Corporate'
     price: '?'
     link: 'mailto:info@leighhack.org?subject=Corporate%20Membership'
-    desc: 'For more info please speak to a Director.'
-    desc2: ''
+    desc: 'For more info'
+    desc2: 'please speak to a Director.'
+  friend:
     enabled: '1'
+    name: 'Friend'
+    price: '5'
+    link: 'mailto:info@leighhack.org?subject=Friend%20Of%the%20%20Hackspace '
+    desc: 'I want to help but'
+    desc2: 'I dont have much freetime'
 phone: null
 membership_cta: 'Become a member and get instant access to all the facilities at Leigh Hackspace.'
 membership_cta_button: 'Join Today'
